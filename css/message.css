@@ -68,12 +68,21 @@ h1,h2,h3{
     height: 60px;
     margin-bottom: 20px;
     background: #1c2327;
+    position:  relative;
 
 }
-
+.header:before{
+    content: '';
+    display: block;
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    top :0;
+    background: #000 linear-gradient(to left, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+}
 .header .left{
     margin-left: 50px;
-    width: 180px;
+    width: 13.1771%;
     height: 60px;
     background: #1c2327;
     float: left;
@@ -87,7 +96,7 @@ h1,h2,h3{
     background: none;
 }
 .header .middle{
-    width: 720px;
+    width: 52.70%;
     height: 100%;
     padding-left: 50px;
     margin-left: 50px;
@@ -109,7 +118,7 @@ h1,h2,h3{
     color: #00c1de;
 }
 .header .right{
-    width: 50px;
+    width: 3.66%;
     height: 100%;
     margin-left: 20px;
     /*margin: 0 auto;*/
@@ -124,7 +133,6 @@ h1,h2,h3{
     margin-top: 10px;
     margin-left: 30px;
 }
-
 /*.max{*/
 /*    height: auto;*/
 /*    width: 1200px;*/
@@ -174,7 +182,60 @@ h1,h2,h3{
     width: 100%;
     height: auto;
     padding: 0 20px 20px 20px;
+    box-sizing: border-box;
     overflow: hidden;
+}
+.longList .commit input[type="submit"]{
+    font-size: 15px;
+    height: 30px;
+    /*line-height: 2;*/
+    margin: 20px 0 10px 0;
+    float: right;
+    padding: 0 20px ;
+    border-radius: 5px;
+    background: #1c2327;
+    color: #ffffff;
+}
+.longList .mes{
+    height: 105px;
+    width: 1160px;
+    margin: 10px 0;
+    padding: 20px 10px;
+    border-bottom: 1px solid #ececec;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.longList  .mes .mesImg{
+    height: 50px;
+    width: 50px;
+    float: left;
+    margin-right: 10px;
+}
+.longList  .mes .mesImg img{
+    height: 50px;
+    width: 50px;
+}
+.longList  .mes div:nth-child(2){
+    display: flex;
+    justify-content: space-between;
+}
+.longList  .mes div:nth-child(3){
+    margin: 10px;
+}
+.longList .reply{
+    width: calc(1200px - 40px );
+    padding: 0 0 20px 0;
+    box-sizing:  border-box;
+    border-bottom: 1px dashed #ececec;
+}
+.longList .reply .rep{
+    padding: 10px;
+    background: #f9f9f9;
+}
+.longList .reply .rep span{
+    display: inline-block;
+    /*height: 30px;*/
 }
 
 .longBot{

@@ -68,12 +68,21 @@ position: relative;
     height: 60px;
     margin-bottom: 20px;
     background: #1c2327;
+    position:  relative;
 
 }
-
+.header:before{
+    content: '';
+    display: block;
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    top :0;
+    background: #000 linear-gradient(to left, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+}
 .header .left{
     margin-left: 50px;
-    width: 180px;
+    width: 13.1771%;
     height: 60px;
     background: #1c2327;
     float: left;
@@ -87,7 +96,7 @@ position: relative;
     background: none;
 }
 .header .middle{
-    width: 720px;
+    width: 52.70%;
     height: 100%;
     padding-left: 50px;
     margin-left: 50px;
@@ -109,7 +118,7 @@ position: relative;
     color: #00c1de;
 }
 .header .right{
-    width: 50px;
+    width: 3.66%;
     height: 100%;
     margin-left: 20px;
     /*margin: 0 auto;*/
