@@ -180,6 +180,7 @@ position: relative;
     position: absolute;
     top:129px;
     left:50px;
+    z-index: 999;
     /*margin: auto 0 auto 50px;*/
  }
 .turnLeft .leftBut img{
@@ -195,6 +196,7 @@ position: relative;
     position: absolute;
     top: 129px;
     left: 510px;
+    z-index: 999;
     /*margin: auto 50px auto 0;*/
 }
 .turnLeft .rightBut img{
@@ -208,6 +210,7 @@ position: relative;
     position: absolute;
     left: 252px;
     top: 265px;
+    z-index: 999;
     /*margin: 0 auto 20px auto;*/
 }
 .turnLeft .bottomBut div{
@@ -374,9 +377,9 @@ position: relative;
     left: 0;
     transition: all 0.5s ease;
 }
-.diaTitle:hover:before{
-    width: 110px;
-}
+/*.diaTitle:hover:before{*/
+/*    width: 110px;*/
+/*}*/
 .diaTop li{
     display: block;
     font-size: 16px;
@@ -479,6 +482,11 @@ position: relative;
     margin-bottom: 10px ;
     position: relative;
 }
+.diary .right .hot {
+    background: #f7f7f7;
+    margin-bottom: 10px ;
+    position: relative;
+}
 .diary .right a{
     color: #333333;
     font-weight: bolder;
@@ -488,11 +496,19 @@ position: relative;
     margin-left: 15px;
 }
 .diary .right a:before{
+     content: '';
+     height: 21px;
+     width: 21px;
+     display: block;
+     background: #9a9a9a;
+     float: left;
+ }
+.diary .right .hot a:before{
     content: '';
     height: 21px;
     width: 21px;
     display: block;
-    background: #9a9a9a;
+    background: #1c2327;
     float: left;
 }
 .diary .right li:nth-child(1):before{
@@ -501,6 +517,7 @@ position: relative;
     position: absolute;
     left: 1%;
 }
+
 .diary .right li:nth-child(2):before{
     content: '2';
     color: #ffffff;
@@ -537,6 +554,19 @@ position: relative;
     -webkit-box-orient: vertical;
 
     display: none;
+}
+.diary .right .hot p{
+    line-height: 1.5;
+    color: #333333;
+    padding: 5px 0;
+
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+
+    /*display: none;*/
 }
 /*.diary .right li{*/
 /*    border-radius: 5px;*/
@@ -698,7 +728,7 @@ position: relative;
 }
 .special li:hover {
     background: #fff;
-    box-shadow: #ccc 0 0 10px;
+    box-shadow:  0 0 10px 0 #ccc;
 }
 .special li:hover img {
     transform: scale(1.05)
