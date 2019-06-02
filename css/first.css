@@ -19,6 +19,25 @@ a{
 h1,h2,h3{
     text-decoration: none;
 }
+.logo{
+    height: 150px;
+    width: 150px;
+    padding:50px 40px 40px 40px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    /*no-repeat*/
+    background:  url("../html/image/yyk.jpg")  rgba(0,193,222,0.6);
+    background-size:100% 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 1s cubic-bezier(1, 1, 1,1);
+    z-index: 999;
+    opacity: 0.4;
+
+    /*background-image:url(../html/image/yyk.jpg);*/
+    /*background-repeat: ;*/
+}
 .slide{
     width: 250px;
     height: auto;
@@ -155,22 +174,30 @@ position: relative;
     background: #1c2327;
     float: left;
 }
-.turnLeft ul{
+.turnLeft {
     width: 600px;
     height: 290px;
     border-radius: 5px;
     position: relative;
+    overflow: hidden;
 }
-.turnLeft  ul a{
+.turnLeft  .turnA {
     border-radius: 5px;
     width: 600px;
     height: 290px;
     position: absolute;
+    /*transition: all 1.5s cubic-bezier(0, 0, 0, 0);*/
+    left: 600px;
+
+}
+.turnLeft .turnLeftUl  li:nth-child(1) a{
+    left: 0px;
 }
 .turnLeft img{
     border-radius: 5px;
     width: 600px;
     height: 290px;
+    /*opacity: 0;*/
 }
 .turnLeft .leftBut {
     width: 40px;
@@ -227,7 +254,7 @@ position: relative;
     background: #ffffff;
 
     /*overflow: hidden;*/
-    /*display: block;*/
+    display: block;
 }
 .takeTurn .turnMiddle{
     border-radius: 5px;

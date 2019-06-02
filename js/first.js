@@ -31,12 +31,12 @@ window.onload = function ( ) {
         first[i].onclick =function () {
             turnRight = diaAA[i].turnRightIndex;
             for(let j =0 ; j<diaAA.length; j++){
-
-                diaAA[j].style.zIndex = '98';
+                // diaAA[j].style.zIndex = '98';
+                diaAA[j].style.opacity = 0;
                 first[j].style.background = '#ffffff';
-
             }
-            diaAA[i].style.zIndex = '333';
+            // diaAA[i].style.zIndex = '333';
+            diaAA[i].style.opacity = 1;
             first[i].style.background = '#12B7DE';
         }
     }
@@ -57,10 +57,12 @@ window.onload = function ( ) {
             turnRight = diaAA.length-1;
         }
         for(let i = 0 ; i<diaAA.length ; i++){
-            diaAA[i].style.zIndex = '98';
+            // diaAA[i].style.zIndex = '98';
+            diaAA[i].style.opacity = 0;
             first[i].style.background = '#ffffff';
         }
-        diaAA[turnRight].style.zIndex = '333';
+        diaAA[turnRight].style.opacity = 1;
+        // diaAA[turnRight].style.zIndex = '333';
         first[turnRight].style.background = '#12B7DE';
     }
 
@@ -81,10 +83,12 @@ window.onload = function ( ) {
             turnRight = 0;
         }
         for(let i = 0 ; i<diaAA.length ; i++){
-            diaAA[i].style.zIndex = '98';
+            // diaAA[i].style.zIndex = '98';
+            diaAA[i].style.opacity = 0;
             first[i].style.background = '#ffffff';
         }
-        diaAA[turnRight].style.zIndex = '333';
+        diaAA[turnRight].style.opacity = 1;
+        // diaAA[turnRight].style.zIndex = '333';
         first[turnRight].style.background = '#12B7DE';
     }
     /*
@@ -113,13 +117,15 @@ window.onload = function ( ) {
             turnRight = 0;
         }
         for(let i = 0 ; i<diaAA.length ; i++){
-            diaAA[i].style.zIndex = '98';
+            // diaAA[i].style.zIndex = '98';
+            diaAA[i].style.opacity = 0;
             first[i].style.background = '#ffffff';
         }
-        diaAA[turnRight].style.zIndex = '333';
+        diaAA[turnRight].style.opacity = 1;
+        // diaAA[turnRight].style.zIndex = '333';
         first[turnRight].style.background = '#12B7DE';
     }
-    let t  = setInterval(Set,2000);
+    let t  = setInterval(Set,4000);
     /*
     * 控制时钟的开始与结束
     * */
@@ -130,7 +136,7 @@ window.onload = function ( ) {
         console.log(1);
     }
     turnLeftUl.onmouseleave= function(){
-        t=setInterval(Set,2000);
+        t=setInterval(Set,4000);
     }
 
     /*
@@ -164,6 +170,26 @@ window.onload = function ( ) {
         }
     })
 
+    /*
+    * 懒加载*/
+    let viewH = window.innerHeight;
+    let imgs = document.querySelectorAll('.ljz');
+    let positionArr = [];
+    imgs.forEach(function (ele) {
+        let  partent = ele.offsetParent;
+        positionArr.push(partent.offsetTop + ele.offsetTop)
+    })
 
+    window.onscroll = function ( ) {
+        let  scrolltop = document.documentElement.scrollTop || document.body.scrollTop;
+        for (let  i =0 ; i<positionArr.length ; i++){
+            if(scrolltop + viewH >= positionArr[i] + 50){
+                if(!imgs[i].src){
+                    imgs[i].src = imgs[i].getAttribute('aa');
+                }
+
+            }
+        }
+    }
 
 }
