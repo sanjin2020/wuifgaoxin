@@ -1,0 +1,103 @@
+body ,h1,h1,h3,h4,h5,h6,p,ul,ol,li,form,input,textarea,select{
+    margin: 0;
+    padding: 0;
+    font-family: 微软雅黑;
+    font-size: 16px;
+    list-style: none;
+    /*background: #ffffff;*/
+}
+body{
+    background: #cccccc;
+}
+li{
+    list-style: none;
+}
+a{
+    color: #000;
+    text-decoration: none;
+}
+
+h1,h2,h3{
+    text-decoration: none;
+}
+header{
+    height: 40px;
+    width: auto;
+    background: #cccccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header input[type=text]{
+
+}
+header input[type=submit]{
+    margin-right: 360px;
+    border-radius: 5px;
+    padding: 0 6px;
+}
+
+main{
+    height: auto;
+    width: 600px;
+    margin: 20px auto;
+}
+main .top ul{
+    position: relative;
+    display: flex;
+}
+main .top ul li{
+    flex-grow: 1;
+    text-align: center;
+    line-height: 2;
+    transform: translate(0,0);
+    transition: all ease 0.5s;
+}
+main .top ul .hot{
+
+    color: #ffffff;
+    /*transition: all ease 0.5s;*/
+}
+main .top ul .hot:nth-child(1)~  .top1{
+    transform: translate(0,0);
+    /*background: #1c2327;*/
+}
+main .top ul .hot:nth-child(2)~  .top1{
+    transform: translate(100%,0);
+}
+main .top ul .hot:nth-child(3)~  .top1{
+    transform: translate(200%,0);
+}
+main .top ul div{
+    width: 200px;
+    height: 32px;
+    background: #36a8fe;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: all 0.5s ease;
+}
+
+
+main .text {
+    margin-top: 15px;
+}
+main .text li{
+    width: 100%;
+    font-size: 20px;
+    line-height: 2;
+
+
+}
+main .text li p{
+    display: inline-block;
+}
+main .text li time{
+    float: right;
+    margin-right: 50px;
+    /*display: inline-block;*/
+}
+main .text del{
+    float: right;
+}

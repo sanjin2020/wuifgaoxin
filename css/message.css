@@ -185,6 +185,15 @@ h1,h2,h3{
     box-sizing: border-box;
     overflow: hidden;
 }
+ .photo img{
+    opacity: 0.7;
+}
+.photo li:nth-child(1) img{
+    opacity: 1;
+}
+.longList textarea{
+    margin-top: 15px;
+}
 .longList .commit input[type="submit"]{
     font-size: 15px;
     height: 30px;
