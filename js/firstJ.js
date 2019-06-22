@@ -1,10 +1,21 @@
-window.onload = function ( ) {
+// window.onload = function ( ) {
+$(function () {
+    let slideBtn = $('a:has(.slideDown)');
+    let slideDowns = $('.slideDown');
+    slideBtn.on('mouseenter mouseleave',function () {
+        let index = $(this).index('li:has(.slideDown)');
+        console.log(slideDowns.eq(index));
+        slideDowns.eq(index).slideToggle();
+    })
     /*小点*/
-    let first = document.getElementsByClassName('turnbut');
+    // let first = document.getElementsByClassName('turnbut');
+    let bottomBut = $('.bottomBut');
+    let first = $('.turnbut');
+
     /*
     * 轮播图图片
     * */
-    let diaAA =  document.querySelectorAll('.turnA');
+    let diaAA = $('.turnA');
     /*
 
     /*
@@ -72,28 +83,26 @@ window.onload = function ( ) {
     /*
         * 轮播图底部按键对应
         * */
-    for(let i = 0 ; i<diaAA.length ; i ++){
-        first[i].onclick =function () {
-            if(next === i){
+            bottomBut.on('click','.turnbut',function (e) {
+                console.log(this);
+                console.log(bottomBut.index($(e.target()).closest('div')));
+                // console.log(next);
+                if(next == bottomBut.index($(this).closest('div'))){
                 return;
             }
-            next = i;
+            next = bottomBut.index($(this).closest('div'));
             if(next > current){
-                diaAA[next].style.left = w + 'px';
-                animate(diaAA[current],{left:-w});
-                animate(diaAA[next],{left:0});
+                diaAA.eq(next).css({'left': w});
+                diaAA.eq(current).animate({'left':-w});
+                diaAA.eq(next).animate({'left':0});
             }else{
-                diaAA[next].style.left = -w + 'px';
-                animate(diaAA[current],{left:w});
-                animate(diaAA[next],{left:0});
+                diaAA.eq(next).css({'left': -w});
+                diaAA.eq(current).animate({'left':w});
+                diaAA.eq(next).animate({'left':0});
             }
-            for(let j =0 ; j<diaAA.length; j++){
-                first[j].style.background = '#ffffff';
-            }
-            first[i].style.background = '#12B7DE';
+            $(this).siblings().css({'background' : '#12B7DE'});
             current =next;
-        }
-    }
+        })
 
     /*
     /*
@@ -172,7 +181,7 @@ window.onload = function ( ) {
     }
 
 
-  //博客日记文本显示与隐藏
+    //博客日记文本显示与隐藏
     let rightText = document.querySelectorAll('.diary .right li');
 
     rightText.forEach(function (elem,value) {
@@ -183,8 +192,8 @@ window.onload = function ( ) {
             this.classList.add('hot');
         }
     })
-/*
-* 懒加载*/
+    /*
+    * 懒加载*/
     let viewH = window.innerHeight;
     let imgs = document.querySelectorAll('.ljz');
     let positionArr = [];
@@ -203,6 +212,6 @@ window.onload = function ( ) {
 
             }
         }
-     }
+    }
 
-}
+});
